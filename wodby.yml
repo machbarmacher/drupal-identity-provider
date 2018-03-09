@@ -1,0 +1,23 @@
+pipeline:
+  - name: Revert wodby's changes to settings, but don't fail if no file committed.
+    command: git checkout HEAD `readlink docroot||echo docroot`/sites/default/settings.php||true
+  - name: Composer install.
+    command: composer install --no-dev --no-progress --optimize-autoloader --prefer-dist
+  - name: Composer bin install.
+    command: '! composer help bin || composer bin all install --no-dev --no-progress --optimize-autoloader --prefer-dist'
+  - name: Symlink our settings.
+    command: ln -sf server-wodby.php settings/generated/server.php
+  - name: Symlink our solr.
+    command: ln -sf solr-wodby.php settings/generated/solr.php
+  - name: Scaffold our siteurl.
+    command: |
+      { echo '<?php'; echo "return getenv('WODBY_URL_PRIMARY');"; } >settings/generated/local/siteurl.php
+  - name: Update database
+    command: drush -y updb
+    directory: docroot
+    only_if: test "$(drush status --fields=bootstrap)"
+  - name: Import config
+    command: drush -y cim
+    directory: docroot
+    only_if: test "$(drush status --fields=bootstrap)" && test -f ../config-sync/core.extension.yml
+

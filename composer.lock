@@ -3565,6 +3565,35 @@
             "time": "2017-05-10T09:20:27+00:00"
         },
         {
+            "name": "machbarmacher/settings",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/machbarmacher/settings.git",
+                "reference": "42c3fb9443bb81582d7c4a43fcfda332d2b87ce4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/machbarmacher/settings/zipball/42c3fb9443bb81582d7c4a43fcfda332d2b87ce4",
+                "reference": "42c3fb9443bb81582d7c4a43fcfda332d2b87ce4",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/settings-install",
+                "bin/settings-hashsalt"
+            ],
+            "type": "drupal-drush",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Axel Rutz",
+                    "email": "axel.rutz@machbarmecher.net"
+                }
+            ],
+            "description": "Drupal settings components.",
+            "time": "2018-03-09T20:21:36+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.3.0",
             "source": {
