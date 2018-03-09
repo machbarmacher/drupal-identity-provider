@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - identityprovider
+    - identity
 id: identityprovider_mainpagecontent
-theme: identityprovider
+theme: identity
 region: content
 weight: -2
 provider: null

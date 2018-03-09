@@ -4,9 +4,9 @@ dependencies:
   module:
     - language
   theme:
-    - identityprovider
+    - identity
 id: identityprovider_languageswitcher
-theme: identityprovider
+theme: identity
 region: contentfooter
 weight: -4
 provider: null

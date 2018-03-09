@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - identityprovider
+    - identity
 id: identityprovider_pagetitle
-theme: identityprovider
+theme: identity
 region: content
 weight: -5
 provider: null
